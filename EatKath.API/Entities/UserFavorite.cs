@@ -2,5 +2,13 @@
 {
     public class UserFavorite
     {
+        public int UserId { get; set; }
+
+        public int RestaurantId { get; set; }
+
+        // Navigation Properties
+        public User User { get; set; } = null!;
+
+        public Restaurant Restaurant { get; set; } = null!;
     }
 }

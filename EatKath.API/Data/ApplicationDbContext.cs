@@ -188,6 +188,11 @@ namespace EatKath.API.Data
                 .HasOne(uf => uf.Restaurant)
                 .WithMany(r => r.UserFavorites)
                 .HasForeignKey(uf => uf.RestaurantId);
+
+
+
+
+
         }
     }
 }

@@ -36,7 +36,6 @@
     <Folder Include="Configurations\" />
     <Folder Include="Validators\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Entities\" />
   </ItemGroup>
 
 </Project>

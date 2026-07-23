@@ -189,7 +189,13 @@ namespace EatKath.API.Data
                 .WithMany(r => r.UserFavorites)
                 .HasForeignKey(uf => uf.RestaurantId);
 
+            // ============================
+            // Unique Constraints
+            // ============================
 
+            modelBuilder.Entity<Area>()
+                .HasIndex(a => a.Name)
+                .IsUnique();
 
 
 

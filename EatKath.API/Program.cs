@@ -3,10 +3,13 @@ using EatKath.API.Interfaces;
 using EatKath.API.Mappings;
 using EatKath.API.Middleware;
 using EatKath.API.Services;
+using EatKath.API.Services.Interfaces;
 using EatKath.API.Validators.Area;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using EatKath.API.Middleware;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 
 builder.Services.AddScoped<IAreaService, AreaService>();
+builder.Services.AddScoped<ICuisineService, CuisineService>();
+builder.Services.AddScoped<IDiningTypeService, DiningTypeService>();
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
@@ -27,6 +33,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddValidatorsFromAssemblyContaining<CreateAreaValidator>();
+
 
 var app = builder.Build();
 

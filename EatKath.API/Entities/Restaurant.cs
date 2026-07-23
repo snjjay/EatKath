@@ -2,8 +2,7 @@
 {
     public class Restaurant : BaseEntity
     {
-       
-
+        
         public int OwnerId { get; set; }
 
         public string Name { get; set; } = string.Empty;

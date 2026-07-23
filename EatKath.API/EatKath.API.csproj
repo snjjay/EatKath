@@ -26,12 +26,9 @@
 
   <ItemGroup>
     <Folder Include="DTOs\Auth\" />
-    <Folder Include="DTOs\Cuisine\" />
     <Folder Include="DTOs\Deal\" />
-    <Folder Include="DTOs\DiningType\" />
     <Folder Include="DTOs\Menu\" />
     <Folder Include="DTOs\User\" />
-    <Folder Include="DTOs\Restaurant\" />
     <Folder Include="Helpers\" />
     <Folder Include="Configurations\" />
     <Folder Include="Extensions\" />

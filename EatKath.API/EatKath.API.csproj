@@ -28,7 +28,6 @@
     <Folder Include="DTOs\Auth\" />
     <Folder Include="DTOs\Deal\" />
     <Folder Include="DTOs\Menu\" />
-    <Folder Include="DTOs\User\" />
     <Folder Include="Helpers\" />
     <Folder Include="Configurations\" />
     <Folder Include="Extensions\" />

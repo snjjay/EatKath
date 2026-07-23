@@ -25,6 +25,7 @@ builder.Services.AddScoped<IAreaService, AreaService>();
 builder.Services.AddScoped<ICuisineService, CuisineService>();
 builder.Services.AddScoped<IDiningTypeService, DiningTypeService>();
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

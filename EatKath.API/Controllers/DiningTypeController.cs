@@ -1,9 +1,10 @@
 ﻿using EatKath.API.DTOs.DiningType;
 using EatKath.API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EatKath.API.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class DiningTypeController : ControllerBase
@@ -36,6 +37,7 @@ public class DiningTypeController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create(CreateDiningTypeDto dto)
     {
         var createdDiningType = await _diningTypeService.CreateAsync(dto);
@@ -47,6 +49,7 @@ public class DiningTypeController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Update(int id, UpdateDiningTypeDto dto)
     {
         var updatedDiningType = await _diningTypeService.UpdateAsync(id, dto);
@@ -60,6 +63,7 @@ public class DiningTypeController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
     {
         var deleted = await _diningTypeService.DeleteAsync(id);

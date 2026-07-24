@@ -1,9 +1,10 @@
 ﻿using EatKath.API.DTOs.Area;
 using EatKath.API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EatKath.API.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class AreasController : ControllerBase
@@ -40,6 +41,7 @@ public class AreasController : ControllerBase
 
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create(CreateAreaDto dto)
     {
         var area = await _areaService.CreateAsync(dto);
@@ -49,6 +51,7 @@ public class AreasController : ControllerBase
 
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Update(int id, UpdateAreaDto dto)
     {
         var area = await _areaService.UpdateAsync(id, dto);
@@ -63,6 +66,7 @@ public class AreasController : ControllerBase
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
     {
         var deleted = await _areaService.DeleteAsync(id);
